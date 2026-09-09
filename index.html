@@ -61,9 +61,55 @@
     }
 
     a.contact:hover { background: #245a94; }
+
+    /* ---- 暗黑模式 ---- */
+    body.dark {
+      background: #1a1a2e;
+      color: #f0f0f0;
+    }
+    body.dark p { color: #ccc; }
+    body.dark .skills span {
+      background: #2a2a4a;
+      color: #8ec5fc;
+    }
+    body.dark a.contact {
+      background: #8ec5fc;
+      color: #1a1a2e;
+    }
+    body.dark a.contact:hover { background: #6ba8e6; }
+
+    /* 切换按钮 */
+    .theme-toggle {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.2rem;
+      border: 2px solid #2b6cb0;
+      background: #fff;
+      color: #2b6cb0;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+    .theme-toggle:hover {
+      background: #2b6cb0;
+      color: #fff;
+    }
+    body.dark .theme-toggle {
+      border-color: #8ec5fc;
+      background: #2a2a4a;
+      color: #8ec5fc;
+    }
+    body.dark .theme-toggle:hover {
+      background: #8ec5fc;
+      color: #1a1a2e;
+    }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="document.body.classList.toggle('dark');this.textContent=document.body.classList.contains('dark')?'☀️ 浅色模式':'🌙 暗黑模式'">🌙 暗黑模式</button>
+
   <main>
     <h1>访客</h1>
     <p>你好，我是访客。我正在学习网页开发，喜欢把想法做成干净、好用的页面。</p>
